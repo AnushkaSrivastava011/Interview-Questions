@@ -1,0 +1,41 @@
+Search element in Sorted Rotated array
+
+Efficient approach o(logn)
+
+class Main{
+static int Search(int arr[],int low,int high,int key)
+{
+if(low>high)
+return -1
+int mid=(low+high)/2;
+if(arr[mid]==key)
+return mid;
+//check if left subarray is sorted
+if(arr[low]<=arr[mid]
+{
+//check if key lies in this range
+if(key>=arr[low] && key<=arr[mid])
+return Search(arr,l,mid-1,key);
+return Search(arr,mid+1,high,key);
+}
+//if left subarray is not sorted then right subarray must be sorted
+if(key>=arr[mid] && key<=arr[high]
+return Search(arr,mid+1,high,key);
+return Search(arr,low,mid-1,key);
+return -1;
+}
+public static void main(String args[])
+{
+Scanner sc=new Scanner(System.in);
+int n=sc.nextInt();
+int low=0;
+int high=n-1;
+int key=sc.nextInt();
+int arr[]=new int[n];
+for(int i=0;i<arr.length;i++)
+arr[i]=sc.nextInt();
+System.out.println(Search(arr,low,high,key));
+}
+}
+
+

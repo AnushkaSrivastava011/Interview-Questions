@@ -1,0 +1,11 @@
+Peak element
+(Element which is greater than it's neibouring elements)
+Input: array[]= {5, 10, 20, 15}
+Output: 20
+The element 20 has neighbours 10 and 15,
+both of them are less than 20.
+
+Efficient Approach O(logn)
+
+class PeakEle{
+
