@@ -1,0 +1,97 @@
+The task is to complete the insert() function which is used to implement Insertion Sort.
+
+Example 1:
+
+Input: N = 5, arr[] = { 4, 1, 3, 9, 7}
+Output: 1 3 4 7 9
+
+import java.util.*;
+
+import java.lang.Math;
+
+
+class Sorting
+{
+
+static void insertionSort(int arr[],int n)
+	
+{
+			
+int i;
+		
+for(i=1;i<n;i++)
+
+new InsertionSort().insert(arr,i);
+	
+}
+	
+static void printArray(int arr[],int size)
+
+{
+		
+int i;
+		
+for(i=0;i<size;i++)
+
+System.out.print(arr[i]+" ");
+	 
+  System.out.println();
+
+}
+	
+
+public static void main(String args[])
+
+	{
+	
+	Scanner sc = new Scanner(System.in);
+	
+	int t= sc.nextInt();
+	
+	while(t>0)
+		{
+	
+		int n = sc.nextInt();
+	
+		int a[] = new int[n];
+
+		
+			for(int i=0;i<n;i++)
+	
+		a[i]= sc.nextInt();
+			
+		
+	 insertionSort(a,n);
+		
+	 printArray(a,n);
+	
+		t--;
+
+}
+}	
+ }
+
+class InsertionSort
+{
+  void insert(int arr[],int i)
+  
+{
+      
+int aux=arr[i];
+    
+  int j=i-1;
+      
+while(j>=0 && arr
+{
+         
+ arr[j+1]=arr[j];
+  
+        j--;
+     
+ }
+     
+ arr[j+1]=aux;
+ 
+ }
+
+}
