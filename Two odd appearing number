@@ -1,0 +1,71 @@
+Given an unsorted array arr[] of size N and that contains even number of occurrences for all numbers except two numbers. Find the two numbers in decreasing order which have odd occurrences.
+
+Note: Expected O(n) time complexity and O(1) extra space.
+
+Input:
+The first line of input contains an integer T denoting the number of test cases. Then T test cases follow. Each test case contains an integer N denoting the size of the array. Then the following line contains n space separated integers. 
+
+Output:
+Print two space separated integers which have odd occurrences. Print the greater number first and then the smaller odd number.
+
+Constraints:
+1 <= T <= 100
+2 <= N <= 105
+1 <= arr[i] <= 105
+
+Example:
+Input:
+2
+8
+4 2 4 5 2 3 3 1
+6
+1 7 5 5 4 4
+
+Output:
+5 1
+7 1
+
+
+
+/*package whatever //do not write package name here */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class  GFG 
+{
+    static void oddAppearing(int arr[],int n)
+    {
+        int xor=0,res1=0,res2=0;
+        for(int i=0;i<n;i++)
+        {
+            xor=xor^arr[i];
+        }
+        int rn=xor & ~(xor-1);
+        for(int i=0;i<n;i++)
+        {
+            if((arr[i] & rn)!=0)
+            res1=res1^arr[i];
+            else
+            res2=res2^arr[i];
+        }
+        if(res1>res2)
+        System.out.println(res1+" "+res2);
+        else
+        System.out.println(res2+" "+res1);
+    }
+
+	public static void main (String[] args) {
+		//code
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		while(t-- >0)
+		{
+		    int n=sc.nextInt();
+		    int a[]=new int[n];
+		    for(int i=0;i<n;i++)
+		    a[i]=sc.nextInt();
+		    oddAppearing(a,n);
+		}
+	}
+}
